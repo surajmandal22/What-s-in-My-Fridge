@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fridge To Plate | Recipe Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a class="logo" href="#">
+      <span class="logo-icon">F</span>
+      Fridge<span class="logo-light">ToPlate</span>
+    </a>
+    <nav>
+      <a href="#explore">Explore</a>
+      <a href="#shopping">Shopping List</a>
+      <a href="#favorites" onclick="showFavorites()">Favourites ♥</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">YOUR KITCHEN, REIMAGINED</span>
+        <h1>Good food starts<br>with <span>what you have.</span></h1>
+        <p>Discover delicious recipes from the ingredients already waiting in your fridge.</p>
+
+        <div class="search-box">
+          <input id="ingredient" placeholder="Try potato, tomato, paneer..." aria-label="Ingredients">
+          <button onclick="addIngredient()">Add</button>
+        </div>
+
+        <div id="tags" class="tags"></div>
+
+        <button class="primary-btn" onclick="findRecipes()">
+          Find my recipes <span>→</span>
+        </button>
+        <button class="surprise-btn" onclick="surpriseMe()">Surprise me✨</button>
+      </div>
+
+      <div class="hero-art">
+        <div class="art-circle"></div>
+        <div class="art-emoji">🥑</div>
+        <span class="floating food-one">🍅</span>
+        <span class="floating food-two">🥕</span>
+        <span class="floating food-three">🥦</span>
+        <div class="art-note">
+          <span>GOOD FOR YOU</span>
+          <strong>Less waste.<br>More taste.</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="explore section" id="explore">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">FRESH IDEAS, EVERY DAY</span>
+          <h2 id="heading">Recipe Inspiration</h2>
+          <p id="message">Loading delicious ideas for you...</p>
+        </div>
+      </div>
+
+      <div class="filters">
+        <button class="filter active" onclick="setDiet('All', this)">All recipes</button>
+        <button class="filter" onclick="setDiet('Veg', this)">🟢 Pure Veg</button>
+        <button class="filter" onclick="setDiet('Non-Veg', this)">🍗 Non-Veg</button>
+        <button class="filter" onclick="showFavorites()">♥ Favourites</button>
+      </div>
+
+      <div id="results" class="recipe-grid"></div>
+    </section>
+
+    <section class="shopping section" id="shopping">
+      <div class="shopping-intro">
+        <span class="eyebrow">PLAN BEFORE YOU SHOP</span>
+        <h2>Your shopping list.</h2>
+        <p>Keep track of the ingredients you still need.</p>
+      </div>
+
+      <div class="shopping-box">
+        <div class="shopping-input">
+          <input id="shoppingItem" placeholder="Add milk, paneer, onions..." aria-label="Shopping item">
+          <button onclick="addShoppingItem()">Add item +</button>
+        </div>
+        <div class="list-summary">
+          <span id="shoppingCount">0 items</span>
+          <button class="text-btn" onclick="clearBought()">Clear bought items</button>
+        </div>
+        <ul id="shoppingList"></ul>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <button class="close" onclick="closeModal()" aria-label="Close">✕</button>
+      <div id="details"></div>
+    </div>
+  </div>
+
+  <footer>
+    <a class="logo" href="#">Fridge<span class="logo-light">ToPlate</span></a>
+    <p>Made with care for your kitchen and our planet. 🌱</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
