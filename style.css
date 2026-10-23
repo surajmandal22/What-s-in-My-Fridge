@@ -527,3 +527,40 @@ footer p { color: #d1e0d3; font-size: 13px; }
   .shopping-input button { width: 100%; }
   .modal-content { padding: 17px; margin: 10px auto; }
 }
+
+.art-emoji {
+  display: inline-block;
+  animation: avocadoMove 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes avocadoMove {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(8deg);
+  }
+}
+
+.floating {
+  display: inline-block;
+  animation: veggieMove 3s ease-in-out infinite;
+}
+
+.food-two {
+  animation-delay: 0.5s;
+}
+
+.food-three {
+  animation-delay: 1s;
+}
+
+@keyframes veggieMove {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
